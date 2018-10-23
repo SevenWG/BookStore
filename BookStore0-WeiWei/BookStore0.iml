@@ -28,6 +28,8 @@
         <datasource-mapping>
           <factory-entry name="Entities" value="1187972a-3105-4c87-9fcc-76a0888ecc62" />
         </datasource-mapping>
+        <deploymentDescriptor name="orm.xml" url="file://$MODULE_DIR$/META-INF/orm.xml" />
+        <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/META-INF/persistence.xml" />
       </configuration>
     </facet>
   </component>

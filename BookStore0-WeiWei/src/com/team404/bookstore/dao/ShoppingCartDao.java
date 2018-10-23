@@ -11,7 +11,8 @@ import org.hibernate.query.Query;
 import java.util.List;
 
 public class ShoppingCartDao {
-    private static SessionFactory sessionFactory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();;
+    private static SessionFactory sessionFactory =
+            new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
 
 
     public boolean AddShoppingCart(ShoppingCartEntity shoppingCartEntity) {

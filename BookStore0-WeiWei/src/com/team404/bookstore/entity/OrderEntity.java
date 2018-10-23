@@ -1,5 +1,9 @@
 package com.team404.bookstore.entity;
 
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.sql.Timestamp;
 import java.util.Objects;
 
@@ -15,6 +19,9 @@ public class OrderEntity {
     private double aftertaxprice;
     private int amount;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
     public int getId() {
         return id;
     }

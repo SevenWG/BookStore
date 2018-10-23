@@ -1,9 +1,6 @@
 package com.team404.bookstore.service;
 
-import com.team404.bookstore.entity.AddressEntity;
-import com.team404.bookstore.entity.BookEntity;
-import com.team404.bookstore.entity.CategoryEntity;
-import com.team404.bookstore.entity.UserEntity;
+import com.team404.bookstore.entity.*;
 
 import java.util.List;
 
@@ -12,6 +9,7 @@ public class ServiceTest {
     public static void main(String args[]){
         UserEntity  userEntity = new UserEntity();
         AddressEntity addressEntity = new AddressEntity();
+        ShoppingCartEntity shoppingCartEntity = new ShoppingCartEntity();
         OrderProcessService orderProcessService = new OrderProcessService();
         ProductCatalogService productCatalogService = new ProductCatalogService();
 
@@ -43,7 +41,20 @@ public class ServiceTest {
 //        CategoryEntity categoryEntity = productCatalogService.getCategory(1);
 ////        System.out.println(categoryEntity.getId() + " " + categoryEntity.getCategory());
 
-        
+//        shoppingCartEntity.setBookid("1627794247");
+//        shoppingCartEntity.setUserid(1);
+//        shoppingCartEntity.setQuantity(4);
+//        System.out.println(orderProcessService.AddItemtoCart(shoppingCartEntity));
+//
+//        List<ShoppingCartEntity> list = orderProcessService.DisplayShoppingCart(1);
+//        for(ShoppingCartEntity i : list) {
+//            System.out.println(i.getBookid()+" "+i.getQuantity());
+//        }
 
+//        System.out.println(orderProcessService.CalculateAmount(list));
+
+        Integer j = 0;
+        int i = j;
+        System.out.println(i +" "+ j);
     }
 }
