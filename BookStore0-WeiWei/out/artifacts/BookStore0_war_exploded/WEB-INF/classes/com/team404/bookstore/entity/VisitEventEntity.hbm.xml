@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.team404.bookstore.entity.VisitEventEntity" table="VisitEvent" schema="test">
+        <property name="day">
+            <column name="day" sql-type="varchar(8)" length="8"/>
+        </property>
+        <property name="eventtype">
+            <column name="eventtype" sql-type="enum('view', 'cart', 'purchase')"/>
+        </property>
+    </class>
+</hibernate-mapping>

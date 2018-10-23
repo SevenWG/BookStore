@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.team404.bookstore.entity.PoItemEntity" table="POItem" schema="test">
+        <composite-id mapped="true" class="com.team404.bookstore.entity.PoItemEntityPK">
+            <key-property name="id">
+                <column name="id" sql-type="int(10) unsigned"/>
+            </key-property>
+            <key-property name="bookid">
+                <column name="bookid" sql-type="varchar(20)" length="20"/>
+            </key-property>
+        </composite-id>
+        <property name="price">
+            <column name="price" sql-type="int(10) unsigned"/>
+        </property>
+    </class>
+</hibernate-mapping>

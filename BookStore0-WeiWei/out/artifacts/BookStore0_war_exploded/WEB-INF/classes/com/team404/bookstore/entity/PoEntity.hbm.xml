@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.team404.bookstore.entity.PoEntity" table="PO" schema="test">
+        <id name="id">
+            <column name="id" sql-type="int(10) unsigned"/>
+        </id>
+        <property name="lname">
+            <column name="lname" sql-type="varchar(20)" length="20"/>
+        </property>
+        <property name="fname">
+            <column name="fname" sql-type="varchar(20)" length="20"/>
+        </property>
+        <property name="status">
+            <column name="status" sql-type="enum('ordered', 'processed', 'denied')"/>
+        </property>
+    </class>
+</hibernate-mapping>
