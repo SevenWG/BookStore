@@ -41,9 +41,14 @@ public class ServiceTest {
 //        CategoryEntity categoryEntity = productCatalogService.getCategory(1);
 ////        System.out.println(categoryEntity.getId() + " " + categoryEntity.getCategory());
 
-//        shoppingCartEntity.setBookid("1627794247");
+//        shoppingCartEntity.setBookid("1501175513");
 //        shoppingCartEntity.setUserid(1);
-//        shoppingCartEntity.setQuantity(4);
+//        shoppingCartEntity.setQuantity(3);
+//        System.out.println(orderProcessService.AddItemtoCart(shoppingCartEntity));
+//
+//        shoppingCartEntity.setBookid("0132350882");
+//        shoppingCartEntity.setUserid(1);
+//        shoppingCartEntity.setQuantity(2);
 //        System.out.println(orderProcessService.AddItemtoCart(shoppingCartEntity));
 //
 //        List<ShoppingCartEntity> list = orderProcessService.DisplayShoppingCart(1);
@@ -52,9 +57,11 @@ public class ServiceTest {
 //        }
 
 //        System.out.println(orderProcessService.CalculateAmount(list));
+//        System.out.println(orderProcessService.createOrder(1));
+//        List<OrderEntity> list = orderProcessService.DisplayMyOrder(1);
+//        for(OrderEntity i : list) {
+//            System.out.println(i.getTotalprice() + " " + i.getAftertaxprice());
+//        }
 
-        Integer j = 0;
-        int i = j;
-        System.out.println(i +" "+ j);
     }
 }

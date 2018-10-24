@@ -4,9 +4,12 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="com.team404.bookstore.entity.CountEntity" table="Count" schema="test">
-        <id name="count">
-            <column name="count" sql-type="int(11)"/>
+    <class name="com.team404.bookstore.entity.CountEntity" table="Counts" schema="test">
+        <id name="id">
+            <column name="id" sql-type="int(11)"/>
         </id>
+        <property name="counts">
+            <column name="counts" sql-type="int(11)"/>
+        </property>
     </class>
 </hibernate-mapping>

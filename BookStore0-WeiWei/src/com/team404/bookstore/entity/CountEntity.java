@@ -3,26 +3,37 @@ package com.team404.bookstore.entity;
 import java.util.Objects;
 
 public class CountEntity {
-    private int count;
 
-    public int getCount() {
-        return count;
+    private int id;
+    private int counts;
+
+    public int getId() {
+        return id;
     }
 
-    public void setCount(int count) {
-        this.count = count;
+    public void setId(int id) {
+        this.id = id;
     }
+
+    public int getCounts() {
+        return counts;
+    }
+
+    public void setCounts(int counts) {
+        this.counts = counts;
+    }
+
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         CountEntity that = (CountEntity) o;
-        return count == that.count;
+        return counts == that.counts && id == this.id;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(count);
+        return Objects.hash(id, counts);
     }
 }

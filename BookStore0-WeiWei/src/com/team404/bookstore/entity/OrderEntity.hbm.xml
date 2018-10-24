@@ -4,9 +4,10 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="com.team404.bookstore.entity.OrderEntity" table="Order" schema="test">
+    <class name="com.team404.bookstore.entity.OrderEntity" table="Orders" schema="test">
         <id name="id">
             <column name="id" sql-type="int(11)"/>
+            <generator class="identity" />
         </id>
         <property name="userid">
             <column name="userid" sql-type="int(11)"/>

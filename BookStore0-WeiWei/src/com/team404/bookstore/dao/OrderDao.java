@@ -20,14 +20,15 @@ public class OrderDao {
         Transaction transaction = null;
         try {
             transaction = session.beginTransaction();
-            id = (Integer)session.save(orderEntity);
+            session.save(orderEntity);
+            transaction.commit();
+            id = orderEntity.getId();
         } catch (HibernateException e) {
             if (transaction != null) transaction.rollback();
             e.printStackTrace();
         }finally {
             session.close();
         }
-
         return id;
     }
 

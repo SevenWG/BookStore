@@ -23,15 +23,17 @@ public class CountDao {
 
         try {
             transaction = session.beginTransaction();
-            Query query = session.createQuery("FROM CountEntity ");
-            List<CountEntity> list = query.list();
+//            Query query = session.createQuery("FROM CountEntity ");
+//            List<CountEntity> list = query.list();
+//            transaction.commit();
+//            if(list.size() != 0) {
+//                countEntity = list.get(0);
+//            }
+            countEntity = (CountEntity) session.get(CountEntity.class, 1);
             transaction.commit();
-            if(list.size() != 0) {
-                countEntity = list.get(0);
-            }
 
         } catch (HibernateException e) {
-            if (transaction!=null) transaction.rollback();
+            if (transaction != null) transaction.rollback();
             e.printStackTrace();
         } finally {
             session.close();
@@ -49,12 +51,13 @@ public class CountDao {
         try {
             transaction = session.beginTransaction();
             CountEntity countEntity = getCount();
-            int count = countEntity.getCount();
+
+            int count = countEntity.getCounts();
             int newCount = count+1;
-            Query query = session.createQuery("UPDATE CountEntity set count = :newCount");
-            query.setParameter("newCount", newCount);
-            int result = query.executeUpdate();
-            System.out.println("Rows affected: " + result);
+
+            countEntity.setCounts(newCount);
+            session.update(countEntity);
+
             transaction.commit();
         } catch (HibernateException e) {
             if (transaction!=null) transaction.rollback();

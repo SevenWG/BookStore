@@ -115,6 +115,7 @@ public class OrderProcessService {
         return amount;
     }
 
+    /*Calculate a order's total cost(without tax)*/
     public float CalculateTotalPrice(List<ShoppingCartEntity> list) {
         bookDao = new BookDao();
         float totalPrice = 0;
@@ -126,11 +127,13 @@ public class OrderProcessService {
         return totalPrice;
     }
 
+    /*createOrder function's Inner function:Generate the time when order is created*/
     public String GetOrderGenerationTime() {
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         return (String)df.format(new Date());
     }
 
+    /*creates a purchase order including shipping, taxes, total amount due based on shopping cart info*/
     public int createOrder(int userid) {
 
         shoppingCartDao = new ShoppingCartDao();
@@ -165,6 +168,7 @@ public class OrderProcessService {
         return id;
     }
 
+    /*Create & Save OrderBook entities by using ShoppingCart entities*/
     public void createOrderBook(List<ShoppingCartEntity> list, int id) {
         orderBookDao = new OrderBookDao();
         for(ShoppingCartEntity i : list) {
@@ -176,12 +180,13 @@ public class OrderProcessService {
         }
     }
 
+    /*Confirm User's Order, Fail every 5th times among every orders*/
     public boolean confirmOrder(int orderid) {
         countDao = new CountDao();
         orderDao = new OrderDao();
         boolean flag = true;
 
-        if(countDao.getCount().getCount() % 5 == 0 && countDao.getCount().getCount() >= 5) {
+        if(countDao.getCount().getCounts() % 5 == 0 && countDao.getCount().getCounts() >= 5) {
             countDao.CountUpdate();
             flag = false;
             orderDao.UpdateOrderStatus(orderid, flag);
@@ -193,6 +198,7 @@ public class OrderProcessService {
             return flag;
     }
 
+    /*My Order Page-Display User's Order List(Should be used with some other functions to display the details)*/
     public List<OrderEntity> DisplayMyOrder (int userid) {
         orderDao = new OrderDao();
 
